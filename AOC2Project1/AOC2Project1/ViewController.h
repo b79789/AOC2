@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "carFactory.h"
 
 @interface ViewController : UIViewController
+{
+    NSString *text;
+}
 
 @end

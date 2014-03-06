@@ -8,25 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
-@interface baseCar : NSObject
-{
-    int carEnum;
-}
-
 typedef enum {
-    Chevrolet,
-    Ford,
-    Chrysler
+    CreateChevroletType_Chevrolet=0,
+    CreateFordType_Ford,
+    CreateChryslerType_Chrysler
 } carEnum;
 
+@interface baseCar : NSObject
 // data members for mile time, model name of car, array of features.
-
-@property int carMileTime;
-@property NSString *carModel;
-@property NSArray *carFeatures;
-
+{
+    
+    int carMileTime;
+    NSString *carModel;
+    NSArray *carFeatures;
+    NSString *carColor;
+}
 // initialize
 -(id)init;
+
+-(void)setAttributes:(carEnum)type carColor:(NSString*)myCarColor model:(NSString*)myCar time:(int)myTime;
 
 //calculation method
 -(void)calculateMileTime;

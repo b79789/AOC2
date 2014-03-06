@@ -11,16 +11,16 @@
 @implementation baseCar
 
 //synthesize creates get and set methods for each property
-@synthesize carMileTime,carModel,carFeatures;
+@synthesize carMileTime,carModel,carColor;
 
 //initialize the base recipe, creating the instance and setting mile time to 0
 -(id)init
 {
     self =[super init];
-    if (self != nil) {
-        [self setCarMileTime:0];
-        [self setCarModel:nil];
-        [self setCarFeatures:nil];
+    if (self != nil)
+    {
+        
+        
     }
     return self;
 }
@@ -30,6 +30,13 @@
 {
     // just a statement written to log with current value
     NSLog(@"This car has a mile speed of %i ", carMileTime);
+}
+
+-(void)setAttributes:(carEnum)type carColor:(NSString*)myCarColor model:(NSString*)myCar time:(int)myTime
+{
+    carMileTime = myTime;
+    carColor=myCarColor;
+    carModel=myCar;
 }
 
 @end
