@@ -15,4 +15,5 @@
 @property int timePerQuarterMile;
 @property NSString * text;
 
+-(NSString*)myText2;
 @end

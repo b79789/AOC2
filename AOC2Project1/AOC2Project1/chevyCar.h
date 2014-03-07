@@ -14,6 +14,10 @@
 @property int distanceTraveled;
 @property int timePerQuarterMile;
 @property NSString * text;
+@property    NSString *carModel;
+@property    NSString *carColor;
+
+-(NSString*)myText2;
 
 
 

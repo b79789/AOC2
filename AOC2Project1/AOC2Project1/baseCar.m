@@ -43,8 +43,16 @@
 }
 -(NSString*)myText
 {
-    text = [NSString stringWithFormat:@"distance traveled / Time: %d",(carMileTime*carDistance)];
     text = [NSString stringWithFormat:@"The Model is: %@ and the color is %@",carModel,carColor];
+    if (text != nil) {
+        return text;
+    }
+    return nil;
+}
+
+-(NSString*)myText2
+{
+    text = [NSString stringWithFormat:@"This car has a total number of %i ", (carMileTime*carDistance)];
     if (text != nil) {
         return text;
     }

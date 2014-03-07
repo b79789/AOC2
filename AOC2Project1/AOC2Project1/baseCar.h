@@ -36,5 +36,6 @@ typedef enum {
 -(void)calculateMileTime;
 
 -(NSString*)myText;
+-(NSString*)myText2;
 
 @end

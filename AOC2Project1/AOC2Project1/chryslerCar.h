@@ -26,5 +26,6 @@ typedef enum
 @property int myCarType;
 @property NSString * text;
 
+-(NSString*)myText2;
 
 @end

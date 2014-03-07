@@ -50,30 +50,43 @@
     }
     
     myTextLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 50, 300, 100)];
-    myTextLabel.text = [myBaseCar myText];
+    myTextLabel.text = [myChevy myText];
     myTextLabel.textAlignment = NSTextAlignmentCenter;
+    myTextLabel.textColor = [UIColor greenColor];
+    myTextLabel.backgroundColor = [UIColor brownColor];
     myTextLabel.numberOfLines =0;
     [myTextLabel sizeToFit];
     [self.view addSubview:myTextLabel];
     myTextLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 100, 300, 100)];
-    myTextLabel.text = [myChevy myText];
-    myTextLabel.textAlignment = NSTextAlignmentCenter;
-    myTextLabel.numberOfLines =0;
-    [myTextLabel sizeToFit];
-    [self.view addSubview:myTextLabel];
-    myTextLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 150, 300, 100)];
     myTextLabel.text = [myFord myText];
     myTextLabel.textAlignment = NSTextAlignmentCenter;
     myTextLabel.numberOfLines =0;
     [myTextLabel sizeToFit];
     [self.view addSubview:myTextLabel];
-    myTextLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 200, 300, 100)];
+    myTextLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 150, 300, 100)];
     myTextLabel.text = [myChrysler myText];
     myTextLabel.textAlignment = NSTextAlignmentCenter;
     myTextLabel.numberOfLines =0;
     [myTextLabel sizeToFit];
     [self.view addSubview:myTextLabel];
-    
+    myCalcLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 200, 300, 100)];
+    myCalcLabel.text = [myChevy myText2];
+    myTextLabel.textAlignment = NSTextAlignmentCenter;
+    myTextLabel.numberOfLines =0;
+    [myTextLabel sizeToFit];
+    [self.view addSubview:myCalcLabel];
+    myCalcLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 250, 300, 100)];
+    myCalcLabel.text = [myFord myText2];
+    myTextLabel.textAlignment = NSTextAlignmentCenter;
+    myTextLabel.numberOfLines =0;
+    [myTextLabel sizeToFit];
+    [self.view addSubview:myCalcLabel];
+    myCalcLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 300, 300, 100)];
+    myCalcLabel.text = [myChrysler myText2];
+    myTextLabel.textAlignment = NSTextAlignmentCenter;
+    myTextLabel.numberOfLines =0;
+    [myTextLabel sizeToFit];
+    [self.view addSubview:myCalcLabel];
     
     chevyCar *firstCar = (chevyCar*)[carFactory createNewCar:CreateChevroletType_Chevrolet];
     [firstCar setTimePerQuarterMile:5];

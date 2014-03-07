@@ -34,9 +34,20 @@
     NSLog(@"This car has a mile speed of %i ", (distanceTraveled/timePerQuarterMile));
 }
 
+
 -(NSString*)myText
 {
-    text = [NSString stringWithFormat:@"distance traveled / Time Ford: %d",(carDistance*carMileTime)];
+    text = [NSString stringWithFormat:@"My car model is %@ and the color is %@",carModel,carColor];
+    
+    if (text != nil) {
+        return text;
+    }
+    return nil;
+}
+
+-(NSString*)myText2
+{
+    text = [NSString stringWithFormat:@"This car has a mile speed of %i ", (distanceTraveled/timePerQuarterMile)];
     if (text != nil) {
         return text;
     }
