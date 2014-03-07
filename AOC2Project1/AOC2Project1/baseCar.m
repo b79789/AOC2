@@ -10,16 +10,18 @@
 
 @implementation baseCar
 
-//synthesize creates get and set methods for each property
-@synthesize carMileTime,carModel,carColor;
+// creates get and set methods for values
+@synthesize carColor,carMileTime,carModel;
 
-//initialize the base recipe, creating the instance and setting mile time to 0
+//initialize the base car, creating the instance and setting mile time to 0
 -(id)init
 {
     self =[super init];
     if (self != nil)
     {
-        
+        [self setCarColor:nil];
+        [self setCarMileTime:0];
+        [self setCarModel:nil];
         
     }
     return self;

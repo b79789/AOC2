@@ -17,12 +17,14 @@ typedef enum {
 @interface baseCar : NSObject
 // data members for mile time, model name of car, array of features.
 {
-    
-    int carMileTime;
-    NSString *carModel;
-    NSArray *carFeatures;
-    NSString *carColor;
+
+
 }
+
+@property    NSString *carModel;
+@property    NSString *carColor;
+@property int carMileTime;
+
 // initialize
 -(id)init;
 

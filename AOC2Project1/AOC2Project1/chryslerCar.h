@@ -9,10 +9,22 @@
 #import "baseCar.h"
 
 @interface chryslerCar : baseCar
+{
+    int carType;
+}
 
+typedef enum
+{
+    FourDoor,
+    TwoDoor,
+    RaceType
+}carType;
 //data members for speed and time
-@property int carSpeed;
-@property int timePerMile;
-@property NSString * carColor;
+@property int distanceTraveled;
+@property int timePerQuarterMile;
+@property NSString *chrylserType;
+@property int myCarType;
+
+
 
 @end

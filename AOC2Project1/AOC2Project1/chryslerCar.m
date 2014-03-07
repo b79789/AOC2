@@ -10,27 +10,42 @@
 
 @implementation chryslerCar
 
-@synthesize carSpeed, timePerMile, carColor;
+@synthesize  distanceTraveled,timePerQuarterMile,chrylserType,myCarType;
 
-//customizing init to set unique data member
 -(id)init
 {
-    self = [super init];
-    if (self != nil) {
-        [self setCarMileTime:14.6];
-        [self setCarSpeed:60];
-        [self setTimePerMile:58.4];
-        [self setCarColor:@"The car is Red"];
+    self =[super init];
+    if (self != nil)
+    {
+        [self setCarColor:@"Blue"];
+        [self setCarMileTime:100];
+        [self setCarModel:@"Dodge"];
+        [self setDistanceTraveled:100];
+        [self setTimePerQuarterMile:6];
+        [self setChrylserType:@""];
+        [self setMyCarType:RaceType];
+        NSLog(@"you found my Car!!!");
+        
     }
     return self;
-};
+}
 
-//overiding the base car  mile time to factor in unique values
 -(void)calculateMileTime
 {
-    [self setCarMileTime:(carSpeed * timePerMile)];
-    NSLog(@"This car has a mile speed of %i ", self.carMileTime);
-    NSLog(@"NSString = %@",carColor);
+    if (myCarType == FourDoor) {
+        [self setMyCarType:0];
+        [self setChrylserType:@"ThreeHundred"];
+    }else if (myCarType ==TwoDoor){
+        [self setMyCarType:1];
+        [self setChrylserType:@"Sebring"];
+    }else if (myCarType == RaceType){
+        [self setMyCarType:2];
+        [self setChrylserType:@"Viper"];
+
+    }else{
+        NSLog(@"Something went wrong");
+    }
 }
+
 
 @end

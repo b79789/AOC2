@@ -18,7 +18,14 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@" ");
+    mycarFactory =[[carFactory alloc]init];
+    if (mycarFactory != nil)
+    {
+        //called class into action
+    }
+    chevyCar *firstCar = (chevyCar*)[carFactory createNewCar:CreateChevroletType_Chevrolet];
+    [firstCar setTimePerQuarterMile:5];
+    NSLog(@" This where we are at %@",firstCar.carModel);
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.

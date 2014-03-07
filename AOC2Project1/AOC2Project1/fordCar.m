@@ -10,27 +10,28 @@
 
 @implementation fordCar
 
-@synthesize carSpeed, timePerMile, carColor;
+@synthesize distanceTraveled,timePerQuarterMile;
 
-//customizing init to set unique data member
 -(id)init
 {
-    self = [super init];
-    if (self != nil) {
-        [self setCarMileTime:11.9];
-        [self setCarSpeed:60];
-        [self setTimePerMile:47.6];
-        [self setCarColor:@"The car is Black"];
+    self =[super init];
+    if (self != nil)
+    {
+        [self setCarColor:@"Black"];
+        [self setCarMileTime:100];
+        [self setCarModel:@"Mustang"];
+        [self setDistanceTraveled:100];
+        [self setTimePerQuarterMile:4.5];
+        
     }
     return self;
-};
+}
 
-//overiding the base car  mile time to factor in unique values
 -(void)calculateMileTime
 {
-    [self setCarMileTime:(carSpeed * timePerMile)];
-    NSLog(@"This car has a mile speed of %i ", self.carMileTime);
-    NSLog(@"NSString = %@",carColor);
+    [self setCarMileTime:(distanceTraveled/timePerQuarterMile)];
+    // just a statement written to log with current value
+    NSLog(@"This car has a mile speed of %i ", (distanceTraveled/timePerQuarterMile));
 }
 
 @end

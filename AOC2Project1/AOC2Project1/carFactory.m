@@ -13,6 +13,8 @@
 +(baseCar *) createNewCar: (int)carType;
 {
     return [[chevyCar alloc]init];
+    return [[fordCar alloc]init];
+    return [[chryslerCar alloc]init];
 }
 
 @end

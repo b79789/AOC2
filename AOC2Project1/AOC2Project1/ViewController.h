@@ -12,6 +12,7 @@
 @interface ViewController : UIViewController
 {
     NSString *text;
+    carFactory *mycarFactory;
 }
 
 @end

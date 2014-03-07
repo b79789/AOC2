@@ -11,9 +11,9 @@
 @interface chevyCar : baseCar
 
 //data members for speed and time
-@property int carSpeed;
-@property int timePerMile;
-@property NSString * carColor;
+@property int distanceTraveled;
+@property int timePerQuarterMile;
+
 
 
 
