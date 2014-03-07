@@ -10,7 +10,7 @@
 
 @implementation chryslerCar
 
-@synthesize  distanceTraveled,timePerQuarterMile,chrylserType,myCarType;
+@synthesize  distanceTraveled,timePerQuarterMile,chrylserType,myCarType,text;
 
 -(id)init
 {
@@ -47,5 +47,14 @@
     }
 }
 
+
+-(NSString*)myText
+{
+    text = [NSString stringWithFormat:@"distance traveled / Time Chrysler: %d",(distanceTraveled/timePerQuarterMile)];
+    if (text != nil) {
+        return text;
+    }
+    return nil;
+}
 
 @end

@@ -12,7 +12,13 @@
 @interface ViewController : UIViewController
 {
     NSString *text;
+    UILabel *myTextLabel;
+    UILabel *myCalcLabel;
     carFactory *mycarFactory;
+    baseCar *myBaseCar;
+    chevyCar * myChevy;
+    fordCar * myFord;
+    chryslerCar * myChrysler;
 }
 
 @end

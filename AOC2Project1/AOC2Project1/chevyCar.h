@@ -13,6 +13,7 @@
 //data members for speed and time
 @property int distanceTraveled;
 @property int timePerQuarterMile;
+@property NSString * text;
 
 
 

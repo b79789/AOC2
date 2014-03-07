@@ -10,7 +10,7 @@
 
 @implementation fordCar
 
-@synthesize distanceTraveled,timePerQuarterMile;
+@synthesize distanceTraveled,timePerQuarterMile,text,carModel,carColor,carDistance,carMileTime;
 
 -(id)init
 {
@@ -34,4 +34,12 @@
     NSLog(@"This car has a mile speed of %i ", (distanceTraveled/timePerQuarterMile));
 }
 
+-(NSString*)myText
+{
+    text = [NSString stringWithFormat:@"distance traveled / Time Ford: %d",(carDistance*carMileTime)];
+    if (text != nil) {
+        return text;
+    }
+    return nil;
+}
 @end

@@ -24,7 +24,7 @@ typedef enum
 @property int timePerQuarterMile;
 @property NSString *chrylserType;
 @property int myCarType;
-
+@property NSString * text;
 
 
 @end

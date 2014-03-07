@@ -10,7 +10,7 @@
 
 @implementation chevyCar
 
-@synthesize distanceTraveled,timePerQuarterMile;
+@synthesize distanceTraveled,timePerQuarterMile,text;
 
 //initialize the base car, creating the instance and setting mile time to 0
 -(id)init
@@ -35,5 +35,13 @@
     NSLog(@"This car has a mile speed of %i ", (distanceTraveled/timePerQuarterMile));
 }
 
+-(NSString*)myText
+{
+    text = [NSString stringWithFormat:@"distance traveled / Time Chevy: %d",(distanceTraveled/timePerQuarterMile)];
+    if (text != nil) {
+        return text;
+    }
+    return nil;
+}
 
 @end
