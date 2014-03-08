@@ -11,7 +11,7 @@
 @implementation baseCar
 
 // creates get and set methods for values
-@synthesize carColor,carMileTime,carModel,text,carDistance;
+@synthesize carColor,carMileTime,carModel,text,carDistance,myCalc;
 
 //initialize the base car, creating the instance and setting mile time to 0
 -(id)init
@@ -31,8 +31,12 @@
 //calculation method
 -(int)calculateMileTime
 {
-    carMileTime*carDistance;
-    return carMileTime*carDistance;
+    myCalc = (carMileTime*carDistance);
+    if(myCalc != 0){
+    return myCalc;
+    }else{
+        return 0;
+    }
 }
 
 -(void)setAttributes:(carEnum)type carColor:(NSString*)myCarColor model:(NSString*)myCar time:(int)myTime

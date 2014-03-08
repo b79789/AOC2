@@ -30,20 +30,23 @@
     return self;
 }
 
--(void)calculateMileTime
+-(int)calculateMileTime
 {
     if (myCarType == FourDoor) {
         [self setMyCarType:0];
         [self setChrylserType:@"ThreeHundred"];
+        return myCarType;
     }else if (myCarType ==TwoDoor){
         [self setMyCarType:1];
         [self setChrylserType:@"Sebring"];
+        return myCarType;
     }else if (myCarType == RaceType){
         [self setMyCarType:2];
         [self setChrylserType:@"Viper"];
-
+        return myCarType;
     }else{
         NSLog(@"Something went wrong");
+        return 5;
     }
 }
 
@@ -51,12 +54,8 @@
 
 -(NSString*)myText
 {
-    text = [NSString stringWithFormat:@"My car model is %@ and the color is %@",carModel,carColor];
-    
-    if (text != nil) {
-        return text;
-    }
-    return nil;
+    [self setText:@"My car model is Chrysler "];
+    return text;
 }
 
 -(NSString*)myText2

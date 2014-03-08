@@ -25,6 +25,7 @@ typedef enum {
 @property    NSString *carColor;
 @property int carMileTime;
 @property int carDistance;
+@property int myCalc;
 @property    NSString * text;
 
 // initialize

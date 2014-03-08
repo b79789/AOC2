@@ -27,22 +27,34 @@
     return self;
 }
 
--(void)calculateMileTime
+-(int)calculateMileTime
 {
     [self setCarMileTime:(distanceTraveled/timePerQuarterMile)];
     // just a statement written to log with current value
     NSLog(@"This car has a mile speed of %i ", (distanceTraveled/timePerQuarterMile));
+    if (distanceTraveled == 0) {
+        [self setDistanceTraveled:10];
+        [self setCarModel:@"Stratus"];
+        return distanceTraveled;
+    }else if (distanceTraveled == 1) {
+        [self setDistanceTraveled:20];
+        [self setCarModel:@"Escort"];
+        return distanceTraveled;
+    }else if (distanceTraveled == 0) {
+        [self setDistanceTraveled:10];
+        [self setCarModel:@"Eclipse"];
+        return distanceTraveled;
+    }else{
+        NSLog(@"Something went wrong");
+        return 5;
+    }
 }
 
 
 -(NSString*)myText
 {
-    text = [NSString stringWithFormat:@"My car model is %@ and the color is %@",carModel,carColor];
-    
-    if (text != nil) {
-        return text;
-    }
-    return nil;
+    [self setText:@"My car model is Ford "];
+    return text;
 }
 
 -(NSString*)myText2

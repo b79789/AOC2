@@ -28,30 +28,44 @@
     return self;
 }
 
--(void)calculateMileTime
+-(int)calculateMileTime
 {
-    [self setCarMileTime:(distanceTraveled/timePerQuarterMile)];
-    // just a statement written to log with current value
-    NSLog(@"This car has a mile speed of %i ", (distanceTraveled/timePerQuarterMile));
+    if (timePerQuarterMile == 0) {
+        [self setTimePerQuarterMile:10];
+        [self setCarModel:@"Trailbalzer"];
+        return distanceTraveled;
+    }else if (timePerQuarterMile == 1) {
+        [self setTimePerQuarterMile:20];
+        [self setCarModel:@"Cavaliar"];
+        return distanceTraveled;
+    }else if (timePerQuarterMile == 3) {
+        [self setTimePerQuarterMile:10];
+        [self setCarModel:@"Malibu"];
+        return timePerQuarterMile;
+    }else{
+        NSLog(@"Something went wrong");
+        return 5;
+    }
 }
 
 -(NSString*)myText
 {
-    text = [NSString stringWithFormat:@"My car model is %@ and the color is %@",carModel,carColor];
+    [self setText:@"My car model is Chevy "];
+    return text;
+    //text = [NSString stringWithFormat:@"My car model is %@ and the color is %@",carModel,carColor];
     
-    if (text != nil) {
-        return text;
-    }
-    return nil;
+    //if (text != nil) {
+        //return text;
+    //}
+   // return nil;
 }
 
 -(NSString*)myText2
 {
-    text = [NSString stringWithFormat:@"This car has a mile speed of %i ", (distanceTraveled/timePerQuarterMile)];
-    if (text != nil) {
-        return text;
-    }
-    return nil;
+    [self setText:@"This car has a mile speed of %i "];
+    return text;
+    //text = [NSString stringWithFormat:@"This car has a mile speed of %i ", (distanceTraveled/timePerQuarterMile)];
+    
 }
 
 @end
