@@ -102,6 +102,19 @@
     [firstCar setTimePerQuarterMile:5];
     NSLog(@" This where we are at %@",firstCar.carModel);
     
+    chryslerCar *aChrysler = (chryslerCar*)[carFactory createNewCar:CreateChryslerType_Chrysler];
+    [aChrysler setTimePerQuarterMile:9];
+    NSLog(@" This where we are at %@",firstCar.carModel);
+    //NSString *chryslerCalc = [aChrysler calculateMileTime];
+    //NSString *chryslerText = [NSString stringWithFormat:@"This Chrysler model is a %@.", chryslerCalc];
+    //myCalcLabel.text = chryslerText;
+    
+    fordCar *aFord = (fordCar*)[carFactory createNewCar:CreateFordType_Ford];
+    [aFord setTimePerQuarterMile:23];
+    NSLog(@" This where we are at %@",firstCar.carModel);
+    //NSString *fordCalc = [aFord calculateMileTime];
+    //NSString *fordText = [NSString stringWithFormat:@"This Ford model is a %@.", fordCalc];
+    //myCalcLabel.text = fordText;
     
 }
 

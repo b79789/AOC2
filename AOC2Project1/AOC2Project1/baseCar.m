@@ -29,11 +29,10 @@
 }
 
 //calculation method
--(void)calculateMileTime
+-(int)calculateMileTime
 {
-    // just a statement written to log with current value
-    text =[NSString stringWithFormat:@"This car has a mile speed of %i ", carMileTime];
-    
+    carMileTime*carDistance;
+    return carMileTime*carDistance;
 }
 
 -(void)setAttributes:(carEnum)type carColor:(NSString*)myCarColor model:(NSString*)myCar time:(int)myTime

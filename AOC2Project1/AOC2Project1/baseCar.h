@@ -33,7 +33,7 @@ typedef enum {
 -(void)setAttributes:(carEnum)type carColor:(NSString*)myCarColor model:(NSString*)myCar time:(int)myTime;
 
 //calculation method
--(void)calculateMileTime;
+-(int)calculateMileTime;
 
 -(NSString*)myText;
 -(NSString*)myText2;

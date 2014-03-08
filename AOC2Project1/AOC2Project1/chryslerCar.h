@@ -22,7 +22,7 @@ typedef enum
 //data members for speed and time
 @property int distanceTraveled;
 @property int timePerQuarterMile;
-@property NSString *chrylserType;
+@property  NSString *chrylserType;
 @property int myCarType;
 @property NSString * text;
 
