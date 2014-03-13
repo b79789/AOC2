@@ -15,17 +15,15 @@
 
 typedef enum
 {
-    FourDoor,
-    TwoDoor,
-    RaceType
+    FourDoor=0,
+    TwoDoor=1,
+    RaceType=2
 }carType;
 //data members for speed and time
-@property int distanceTraveled;
-@property int timePerQuarterMile;
 @property  NSString *chrylserType;
 @property int myCarType;
-@property NSString * text;
 
--(NSString*)myText2;
+
+
 
 @end

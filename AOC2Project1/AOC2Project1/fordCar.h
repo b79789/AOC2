@@ -8,12 +8,17 @@
 
 #import "baseCar.h"
 
+typedef enum {
+    car4=0,
+    car5,
+    car6
+} carOrder2;
+
 @interface fordCar : baseCar
 
 //data members for speed and time
+@property carOrder2 *fordCarOrder;
 @property int distanceTraveled;
 @property int timePerQuarterMile;
-@property NSString * text;
 
--(NSString*)myText2;
 @end

@@ -10,21 +10,14 @@
 
 @implementation chryslerCar
 
-@synthesize  distanceTraveled,timePerQuarterMile,chrylserType,myCarType,text,carModel,carColor;
+@synthesize  chrylserType,myCarType,text;
 
 -(id)init
 {
     self =[super init];
     if (self != nil)
     {
-        [self setCarColor:@"Blue"];
-        [self setCarMileTime:100];
-        [self setCarModel:@"Dodge"];
-        [self setDistanceTraveled:100];
-        [self setTimePerQuarterMile:6];
-        [self setChrylserType:@""];
-        [self setMyCarType:RaceType];
-        NSLog(@"you found my Car!!!");
+        //set values here
         
     }
     return self;
@@ -46,7 +39,7 @@
         return myCarType;
     }else{
         NSLog(@"Something went wrong");
-        return 5;
+        return 99;
     }
 }
 
@@ -58,13 +51,6 @@
     return text;
 }
 
--(NSString*)myText2
-{
-    text = [NSString stringWithFormat:@"This car has a mile speed of %i ", (distanceTraveled/timePerQuarterMile)];
-    if (text != nil) {
-        return text;
-    }
-    return nil;
-}
+
 
 @end

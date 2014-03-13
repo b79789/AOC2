@@ -10,7 +10,7 @@
 
 @implementation chevyCar
 
-@synthesize distanceTraveled,timePerQuarterMile,text,carModel,carColor ;
+@synthesize distanceTraveled,timePerQuarterMile,text,carMileTime,myCalc ;
 
 //initialize the base car, creating the instance and setting mile time to 0
 -(id)init
@@ -18,11 +18,7 @@
     self =[super init];
     if (self != nil)
     {
-        [self setCarColor:@"Red"];
-        //[self setCarMileTime:100];
-        [self setCarModel:@"Camaro"];
-        [self setDistanceTraveled:100];
-        [self setTimePerQuarterMile:5];
+        // set values here
         
     }
     return self;
@@ -30,23 +26,11 @@
 
 -(int)calculateMileTime
 {
-    if (timePerQuarterMile == 0) {
-        [self setTimePerQuarterMile:10];
-        [self setCarModel:@"Trailbalzer"];
-        return distanceTraveled;
-    }else if (timePerQuarterMile == 1) {
-        [self setTimePerQuarterMile:20];
-        [self setCarModel:@"Cavaliar"];
-        return distanceTraveled;
-    }else if (timePerQuarterMile == 3) {
-        [self setTimePerQuarterMile:10];
-        [self setCarModel:@"Malibu"];
-        return timePerQuarterMile;
-    }else{
-        NSLog(@"Something went wrong");
-        return 5;
-    }
+    self.timePerQuarterMile = myCalc * (distanceTraveled / carMileTime);
+    return timePerQuarterMile;
+    NSLog(@"The cars time calculation is %d ", timePerQuarterMile);
 }
+
 
 -(NSString*)myText
 {
@@ -58,14 +42,6 @@
         //return text;
     //}
    // return nil;
-}
-
--(NSString*)myText2
-{
-    [self setText:@"This car has a mile speed of %i "];
-    return text;
-    //text = [NSString stringWithFormat:@"This car has a mile speed of %i ", (distanceTraveled/timePerQuarterMile)];
-    
 }
 
 @end

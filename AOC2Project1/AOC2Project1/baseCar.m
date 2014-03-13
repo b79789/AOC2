@@ -31,7 +31,7 @@
 //calculation method
 -(int)calculateMileTime
 {
-    myCalc = (carMileTime*carDistance);
+    myCalc = (carMileTime*.25);
     if(myCalc != 0){
     return myCalc;
     }else{
@@ -39,11 +39,7 @@
     }
 }
 
--(void)setAttributes:(carEnum)type carColor:(NSString*)myCarColor model:(NSString*)myCar time:(int)myTime
-{
-    [self setAttributes:CreateChryslerType_Chrysler carColor:@"Default" model:@"Default" time:100];
-    
-}
+
 -(NSString*)myText
 {
     text = [NSString stringWithFormat:@"The Model is: %@ and the color is %@",carModel,carColor];
@@ -53,13 +49,6 @@
     return nil;
 }
 
--(NSString*)myText2
-{
-    text = [NSString stringWithFormat:@"This car has a total number of %i ", (carMileTime*carDistance)];
-    if (text != nil) {
-        return text;
-    }
-    return nil;
-}
+
 
 @end

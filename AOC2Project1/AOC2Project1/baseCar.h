@@ -31,12 +31,11 @@ typedef enum {
 // initialize
 -(id)init;
 
--(void)setAttributes:(carEnum)type carColor:(NSString*)myCarColor model:(NSString*)myCar time:(int)myTime;
 
 //calculation method
 -(int)calculateMileTime;
 
 -(NSString*)myText;
--(NSString*)myText2;
+
 
 @end
