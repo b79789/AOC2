@@ -10,6 +10,9 @@
 		389A343518D29CE8001E657B /* 256x256.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 389A343218D29CE8001E657B /* 256x256.jpg */; };
 		389A343618D29CE8001E657B /* blackViper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 389A343318D29CE8001E657B /* blackViper.jpg */; };
 		389A343718D29CE8001E657B /* photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 389A343418D29CE8001E657B /* photo.jpg */; };
+		389A343B18D36DC8001E657B /* 256x256selected.gif in Resources */ = {isa = PBXBuildFile; fileRef = 389A343818D36DC8001E657B /* 256x256selected.gif */; };
+		389A343C18D36DC8001E657B /* blackViperselected.gif in Resources */ = {isa = PBXBuildFile; fileRef = 389A343918D36DC8001E657B /* blackViperselected.gif */; };
+		389A343D18D36DC8001E657B /* photoselected.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 389A343A18D36DC8001E657B /* photoselected.jpg */; };
 		38FD8FF318C61A9600113D22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FD8FF218C61A9600113D22 /* Foundation.framework */; };
 		38FD8FF518C61A9600113D22 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FD8FF418C61A9600113D22 /* CoreGraphics.framework */; };
 		38FD8FF718C61A9600113D22 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FD8FF618C61A9600113D22 /* UIKit.framework */; };
@@ -45,6 +48,9 @@
 		389A343218D29CE8001E657B /* 256x256.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 256x256.jpg; path = ../../../../Downloads/256x256.jpg; sourceTree = "<group>"; };
 		389A343318D29CE8001E657B /* blackViper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = blackViper.jpg; path = ../../../../Downloads/blackViper.jpg; sourceTree = "<group>"; };
 		389A343418D29CE8001E657B /* photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photo.jpg; path = ../../../../Downloads/photo.jpg; sourceTree = "<group>"; };
+		389A343818D36DC8001E657B /* 256x256selected.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = 256x256selected.gif; path = ../../../256x256selected.gif; sourceTree = "<group>"; };
+		389A343918D36DC8001E657B /* blackViperselected.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = blackViperselected.gif; path = ../../../blackViperselected.gif; sourceTree = "<group>"; };
+		389A343A18D36DC8001E657B /* photoselected.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photoselected.jpg; path = ../../../photoselected.jpg; sourceTree = "<group>"; };
 		38FD8FEF18C61A9600113D22 /* AOC2Project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AOC2Project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38FD8FF218C61A9600113D22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		38FD8FF418C61A9600113D22 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,6 +139,9 @@
 		38FD8FF818C61A9600113D22 /* AOC2Project1 */ = {
 			isa = PBXGroup;
 			children = (
+				389A343818D36DC8001E657B /* 256x256selected.gif */,
+				389A343918D36DC8001E657B /* blackViperselected.gif */,
+				389A343A18D36DC8001E657B /* photoselected.jpg */,
 				389A343218D29CE8001E657B /* 256x256.jpg */,
 				389A343318D29CE8001E657B /* blackViper.jpg */,
 				389A343418D29CE8001E657B /* photo.jpg */,
@@ -265,9 +274,12 @@
 				389A343518D29CE8001E657B /* 256x256.jpg in Resources */,
 				38FD900B18C61A9600113D22 /* Images.xcassets in Resources */,
 				389A343718D29CE8001E657B /* photo.jpg in Resources */,
+				389A343D18D36DC8001E657B /* photoselected.jpg in Resources */,
 				38FD8FFD18C61A9600113D22 /* InfoPlist.strings in Resources */,
 				389A343618D29CE8001E657B /* blackViper.jpg in Resources */,
 				38FD900618C61A9600113D22 /* Main.storyboard in Resources */,
+				389A343C18D36DC8001E657B /* blackViperselected.gif in Resources */,
+				389A343B18D36DC8001E657B /* 256x256selected.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

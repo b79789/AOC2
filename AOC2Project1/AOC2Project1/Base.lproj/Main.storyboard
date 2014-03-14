@@ -79,8 +79,9 @@
                                         <state key="normal" backgroundImage="256x256.jpg">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" backgroundImage="256x256selected.gif"/>
                                         <connections>
-                                            <action selector="calc:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jqg-xl-9fL"/>
+                                            <action selector="calc:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UZQ-2s-sff"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUO-eH-e8I">
@@ -89,8 +90,9 @@
                                         <state key="normal" backgroundImage="photo.jpg">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" backgroundImage="photoselected.jpg"/>
                                         <connections>
-                                            <action selector="calc:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Kps-IA-NXQ"/>
+                                            <action selector="calc:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="z8H-Dw-m4q"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIU-Cc-7Bb">
@@ -99,8 +101,9 @@
                                         <state key="normal" backgroundImage="blackViper.jpg">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" backgroundImage="blackViperselected.gif"/>
                                         <connections>
-                                            <action selector="calc:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VCV-y3-FCp"/>
+                                            <action selector="calc:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Q3e-N4-j8u"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyU-xt-mXZ">
@@ -109,6 +112,9 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="2ZX-Lc-mjQ" kind="modal" modalTransitionStyle="crossDissolve" id="POy-7N-5V1"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChS-s4-ocj">
                                         <rect key="frame" x="190" y="285" width="110" height="21"/>
@@ -151,6 +157,8 @@
                         <outlet property="dodgeButton" destination="RIU-Cc-7Bb" id="f8b-ER-LTa"/>
                         <outlet property="fordButton" destination="VUO-eH-e8I" id="yeC-9I-SgJ"/>
                         <outlet property="howManyAnsewrLabel" destination="ChS-s4-ocj" id="Fwr-I0-D0o"/>
+                        <outlet property="infoButtton" destination="alg-da-Lwa" id="zoY-s1-Jjc"/>
+                        <outlet property="myCalcButtonOut" destination="KW4-6o-fxW" id="XU1-6X-Pm9"/>
                         <outlet property="myStepper" destination="suT-Qv-YrI" id="ZLF-sp-MaD"/>
                         <outlet property="myTextField" destination="1xL-bx-6cS" id="A2q-CA-pZy"/>
                         <outlet property="topSpeedLabel" destination="p4l-B6-mXb" id="ham-PS-6e2"/>
@@ -159,11 +167,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Hy7-gT-xQt">
+            <objects>
+                <viewController id="2ZX-Lc-mjQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j9X-CR-1az"/>
+                        <viewControllerLayoutGuide type="bottom" id="zvp-IT-qdf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a7I-Dg-vCZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vp6-8p-Xqu">
+                                <rect key="frame" x="20" y="214" width="275" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.0" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Exit View">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="kji-yJ-eQ5" kind="unwind" unwindAction="goToWebSite:" id="POX-By-ANb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Brian Stacks" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="o3g-cq-qPf">
+                                <rect key="frame" x="20" y="99" width="280" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.81176477670000002" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QSD-l1-ZTN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kji-yJ-eQ5" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="511" y="-313"/>
+        </scene>
     </scenes>
     <resources>
         <image name="256x256.jpg" width="256" height="256"/>
+        <image name="256x256selected.gif" width="90" height="90"/>
         <image name="blackViper.jpg" width="204" height="204"/>
+        <image name="blackViperselected.gif" width="90" height="90"/>
         <image name="photo.jpg" width="250" height="250"/>
+        <image name="photoselected.jpg" width="90" height="90"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

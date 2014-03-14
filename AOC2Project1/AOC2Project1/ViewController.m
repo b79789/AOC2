@@ -10,15 +10,19 @@
 #import "baseCar.h"
 #import "carFactory.h"
 #import "chevyCar.h"
+#import "fordCar.h"
+#import "chryslerCar.h"
+
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-
+@synthesize myCalc,newTime;
 
 - (void)viewDidLoad
+
 {
     
     
@@ -55,57 +59,61 @@
 - (IBAction)onChange:(id)sender
 {
     int myValue = myStepper.value;
-    myTextField.text = [NSString stringWithFormat:@" You want %d",myValue];
+    //myTextField.text = [NSString stringWithFormat:@" You want %d",myValue];
     howManyAnsewrLabel.text = [NSString stringWithFormat:@"%d",myValue];
 }
 
 - (IBAction)myCalculate:(id)sender
 {
-    if (chevyButton.isSelected == YES) {
-        chevyCar *chevy = (chevyCar*)[carFactory createNewCar:CreateChevroletType_Chevrolet];
-        
-        [chevy setCarColor:@"Red"];
-        colorLabel.text = [NSString stringWithFormat:@"Red"];
-        topSpeedLabel.text = [NSString stringWithFormat:@"226"];
-        howManyAnsewrLabel.text = [NSString stringWithFormat:@"Camaro"];
-
-    }else if (fordButton.isSelected == YES){
-        fordCar *ford = (fordCar*)[carFactory createNewCar:CreateFordType_Ford];
-        [ford setCarColor:@"Blue"];
-        colorLabel.text =[NSString stringWithFormat:@"Blue"];
-        topSpeedLabel.text = [NSString stringWithFormat:@"245"];
-        howManyAnsewrLabel.text = [NSString stringWithFormat:@"Mustang"];
-    }else if (dodgeButton.isSelected == YES){
-        chryslerCar *dodge = (chryslerCar*)[carFactory createNewCar:CreateChryslerType_Chrysler];
-        [dodge setCarColor:@"Black"];
-        colorLabel.text = [NSString stringWithFormat:@"Black"];
-        topSpeedLabel.text = [NSString stringWithFormat:@"279"];
-        howManyAnsewrLabel.text = [NSString stringWithFormat:@"Viper"];
+    myCalc = (newTime*.25);
+    if(myCalcButtonOut.selected){
+        myTextField.text = [NSString stringWithFormat:@"New Time = %d",myCalc];
     }else{
         //do nothing
-        NSLog(@" Broken!!!");
+        NSLog(@"Help Me!!");
     }
+}
+
+- (void) flipButton:(UIButton*) button {
+        if(button.selected)
+            [button setSelected:NO];
+        else
+            [button setSelected:YES];
+        
 }
 
 - (IBAction)calc:(id)sender
 {
-    if (chevyButton.isSelected == YES) {
+    
+    UIButton *touchedButton = (UIButton*) sender;
+    
+    //select the touched button
+    [self performSelector:@selector(flipButton:) withObject:sender afterDelay:0.0];
+    
+    if(currentlySelectedButton != nil) { //check to see if a button is selected...
+        [self flipButton:currentlySelectedButton];
+        
+        currentlySelectedButton = touchedButton;
+    }else if (chevyButton.selected == YES) {
         chevyCar *chevy = (chevyCar*)[carFactory createNewCar:CreateChevroletType_Chevrolet];
         
         [chevy setCarColor:@"Red"];
+        chevyButton.selected = !chevyButton.selected;
         colorLabel.text = [NSString stringWithFormat:@"Red"];
         topSpeedLabel.text = [NSString stringWithFormat:@"226"];
         howManyAnsewrLabel.text = [NSString stringWithFormat:@"Camaro"];
         
-    }else if (fordButton.isSelected == YES){
+    }else if (fordButton.selected == YES){
         fordCar *ford = (fordCar*)[carFactory createNewCar:CreateFordType_Ford];
         [ford setCarColor:@"Blue"];
+        fordButton.selected = !fordButton.selected;
         colorLabel.text =[NSString stringWithFormat:@"Blue"];
         topSpeedLabel.text = [NSString stringWithFormat:@"245"];
         howManyAnsewrLabel.text = [NSString stringWithFormat:@"Mustang"];
-    }else if (dodgeButton.isSelected == YES){
+    }else if (dodgeButton.selected == YES){
         chryslerCar *dodge = (chryslerCar*)[carFactory createNewCar:CreateChryslerType_Chrysler];
         [dodge setCarColor:@"Black"];
+        dodgeButton.selected = !dodgeButton.selected;
         colorLabel.text = [NSString stringWithFormat:@"Black"];
         topSpeedLabel.text = [NSString stringWithFormat:@"279"];
         howManyAnsewrLabel.text = [NSString stringWithFormat:@"Viper"];
@@ -114,5 +122,17 @@
         NSLog(@" Broken!!!");
     }
 }
+
+-(IBAction)goToWebSite:(UIStoryboardSegue*)segue{
+    
+    
+        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/bstacks78"]];
+    
+}
+
+
+
+    
+
 
 @end
