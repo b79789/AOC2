@@ -11,14 +11,21 @@
 
 @interface ViewController : UIViewController
 {
-    NSString *text;
-    UILabel *myTextLabel;
-    UILabel *myCalcLabel;
-    carFactory *mycarFactory;
-    baseCar *myBaseCar;
-    chevyCar * myChevy;
-    fordCar * myFord;
-    chryslerCar * myChrysler;
+    
+    __weak IBOutlet UIStepper *myStepper;
+    __weak IBOutlet UITextField *myTextField;
+    __weak IBOutlet UILabel *howManyAnsewrLabel;
+    __weak IBOutlet UIButton *chevyButton;
+    __weak IBOutlet UIButton *fordButton;
+    __weak IBOutlet UIButton *dodgeButton;
+    __weak IBOutlet UILabel *colorLabel;
+    __weak IBOutlet UILabel *topSpeedLabel;
 }
+
+- (IBAction)mySegmentedAction:(id)sender;
+- (IBAction)onChange:(id)sender;
+- (IBAction)myCalculate:(id)sender;
+- (IBAction)calc:(id)sender;
+
 
 @end
