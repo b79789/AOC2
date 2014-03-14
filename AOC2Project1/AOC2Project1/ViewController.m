@@ -59,8 +59,8 @@
 - (IBAction)onChange:(id)sender
 {
     int myValue = myStepper.value;
-    //myTextField.text = [NSString stringWithFormat:@" You want %d",myValue];
-    howManyAnsewrLabel.text = [NSString stringWithFormat:@"%d",myValue];
+    myTextField.text = [NSString stringWithFormat:@" You want %d",myValue];
+    //howManyAnsewrLabel.text = [NSString stringWithFormat:@"%d",myValue];
 }
 
 - (IBAction)myCalculate:(id)sender
@@ -86,7 +86,8 @@
 {
     
     UIButton *touchedButton = (UIButton*) sender;
-    
+    int myValue = (2)*(1);
+
     //select the touched button
     [self performSelector:@selector(flipButton:) withObject:sender afterDelay:0.0];
     
@@ -94,14 +95,18 @@
         [self flipButton:currentlySelectedButton];
         
         currentlySelectedButton = touchedButton;
-    }else if (chevyButton.selected == YES) {
+    }//then check to see whitch button is selected  and do something 
+    else if (chevyButton.selected == YES) {
         chevyCar *chevy = (chevyCar*)[carFactory createNewCar:CreateChevroletType_Chevrolet];
         
         [chevy setCarColor:@"Red"];
+        [chevy setDistanceTraveled:6000];
+        [chevy setCarMileTime:5];
+        [chevy calculateMileTime];
         chevyButton.selected = !chevyButton.selected;
         colorLabel.text = [NSString stringWithFormat:@"Red"];
         topSpeedLabel.text = [NSString stringWithFormat:@"226"];
-        howManyAnsewrLabel.text = [NSString stringWithFormat:@"Camaro"];
+        howManyAnsewrLabel.text = [NSString stringWithFormat:@"%d",([chevy calculateMileTime])*(myValue)];
         
     }else if (fordButton.selected == YES){
         fordCar *ford = (fordCar*)[carFactory createNewCar:CreateFordType_Ford];

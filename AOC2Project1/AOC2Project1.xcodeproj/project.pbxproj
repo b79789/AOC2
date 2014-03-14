@@ -13,6 +13,7 @@
 		389A343B18D36DC8001E657B /* 256x256selected.gif in Resources */ = {isa = PBXBuildFile; fileRef = 389A343818D36DC8001E657B /* 256x256selected.gif */; };
 		389A343C18D36DC8001E657B /* blackViperselected.gif in Resources */ = {isa = PBXBuildFile; fileRef = 389A343918D36DC8001E657B /* blackViperselected.gif */; };
 		389A343D18D36DC8001E657B /* photoselected.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 389A343A18D36DC8001E657B /* photoselected.jpg */; };
+		389A344018D3719A001E657B /* secondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 389A343F18D3719A001E657B /* secondViewController.m */; };
 		38FD8FF318C61A9600113D22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FD8FF218C61A9600113D22 /* Foundation.framework */; };
 		38FD8FF518C61A9600113D22 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FD8FF418C61A9600113D22 /* CoreGraphics.framework */; };
 		38FD8FF718C61A9600113D22 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FD8FF618C61A9600113D22 /* UIKit.framework */; };
@@ -51,6 +52,8 @@
 		389A343818D36DC8001E657B /* 256x256selected.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = 256x256selected.gif; path = ../../../256x256selected.gif; sourceTree = "<group>"; };
 		389A343918D36DC8001E657B /* blackViperselected.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = blackViperselected.gif; path = ../../../blackViperselected.gif; sourceTree = "<group>"; };
 		389A343A18D36DC8001E657B /* photoselected.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = photoselected.jpg; path = ../../../photoselected.jpg; sourceTree = "<group>"; };
+		389A343E18D3719A001E657B /* secondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondViewController.h; sourceTree = "<group>"; };
+		389A343F18D3719A001E657B /* secondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondViewController.m; sourceTree = "<group>"; };
 		38FD8FEF18C61A9600113D22 /* AOC2Project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AOC2Project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38FD8FF218C61A9600113D22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		38FD8FF418C61A9600113D22 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -162,6 +165,8 @@
 				38FD903718C61C9B00113D22 /* fordCar.m */,
 				38FD903918C61CAD00113D22 /* chryslerCar.h */,
 				38FD903A18C61CAD00113D22 /* chryslerCar.m */,
+				389A343E18D3719A001E657B /* secondViewController.h */,
+				389A343F18D3719A001E657B /* secondViewController.m */,
 			);
 			path = AOC2Project1;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				38FD902C18C61BE600113D22 /* carFactory.m in Sources */,
 				38FD903B18C61CAD00113D22 /* chryslerCar.m in Sources */,
 				38FD903218C61C4600113D22 /* baseCar.m in Sources */,
+				389A344018D3719A001E657B /* secondViewController.m in Sources */,
 				38FD900318C61A9600113D22 /* AppDelegate.m in Sources */,
 				38FD903818C61C9B00113D22 /* fordCar.m in Sources */,
 				38FD903518C61C8400113D22 /* chevyCar.m in Sources */,
