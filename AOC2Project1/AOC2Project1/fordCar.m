@@ -10,7 +10,7 @@
 
 @implementation fordCar
 
-@synthesize distanceTraveled,timePerQuarterMile,fordCarOrder,text,myCalc,carMileTime;
+@synthesize distanceTraveled,timePerQuarterMile,fordCarOrder,text,myCalc,carMileTime,price,tax,carPrice;
 
 -(id)init
 {
@@ -25,12 +25,11 @@
 
 -(int)calculateMileTime
 {
-    if (fordCarOrder != nil) {
-        self.timePerQuarterMile = myCalc * (distanceTraveled + 1);
-        return timePerQuarterMile;
-        NSLog(@"The cars time calculation is %d ", timePerQuarterMile);
-    }
-    return self.timePerQuarterMile;
+    price = 9999;
+    tax = (price) *(.17);
+    self.carPrice = myCalc * (price / tax);
+    return timePerQuarterMile;
+    NSLog(@"The cars PRICE calculation is %d ", carPrice);
 }
 
 

@@ -19,6 +19,6 @@ typedef enum {
 //data members for speed and time
 @property int distanceTraveled;
 @property int timePerQuarterMile;
-
-
+@property int price;
+@property int tax;
 @end

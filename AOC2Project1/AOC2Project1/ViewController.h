@@ -32,6 +32,7 @@
 @property int myCalc;
 @property int newTime;
 
+
 - (IBAction)mySegmentedAction:(id)sender;
 - (IBAction)onChange:(id)sender;
 - (IBAction)myCalculate:(id)sender;

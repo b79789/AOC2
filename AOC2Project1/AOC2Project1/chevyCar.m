@@ -10,7 +10,7 @@
 
 @implementation chevyCar
 
-@synthesize distanceTraveled,timePerQuarterMile,text,carMileTime,myCalc ;
+@synthesize distanceTraveled,timePerQuarterMile,text,carMileTime,myCalc,carPrice ,price,tax;
 
 //initialize the base car, creating the instance and setting mile time to 0
 -(id)init
@@ -26,9 +26,11 @@
 
 -(int)calculateMileTime
 {
-    self.timePerQuarterMile = myCalc * (distanceTraveled / carMileTime);
+    price = 10000;
+    tax = (price) *(.17);
+    self.carPrice = myCalc * (price / tax);
     return timePerQuarterMile;
-    NSLog(@"The cars time calculation is %d ", timePerQuarterMile);
+    NSLog(@"The cars PRICE calculation is %d ", carPrice);
 }
 
 

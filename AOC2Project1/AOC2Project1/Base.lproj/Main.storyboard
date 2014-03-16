@@ -27,8 +27,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How Many?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfx-wZ-MZA">
-                                        <rect key="frame" x="30" y="285" width="92" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Car Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfx-wZ-MZA">
+                                        <rect key="frame" x="30" y="285" width="76" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -46,11 +46,11 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1xL-bx-6cS">
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1xL-bx-6cS">
                                         <rect key="frame" x="20" y="96" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6eS-lv-aN0">
                                         <rect key="frame" x="20" y="52" width="280" height="29"/>
@@ -79,9 +79,8 @@
                                         <state key="normal" backgroundImage="256x256.jpg">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <state key="selected" backgroundImage="256x256selected.gif"/>
                                         <connections>
-                                            <action selector="calc:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UZQ-2s-sff"/>
+                                            <action selector="calc:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aNy-kC-86N"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUO-eH-e8I">
@@ -90,9 +89,8 @@
                                         <state key="normal" backgroundImage="photo.jpg">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <state key="selected" backgroundImage="photoselected.jpg"/>
                                         <connections>
-                                            <action selector="calc:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="z8H-Dw-m4q"/>
+                                            <action selector="calc:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="E00-Ut-nc8"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIU-Cc-7Bb">
@@ -101,9 +99,8 @@
                                         <state key="normal" backgroundImage="blackViper.jpg">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <state key="selected" backgroundImage="blackViperselected.gif"/>
                                         <connections>
-                                            <action selector="calc:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Q3e-N4-j8u"/>
+                                            <action selector="calc:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XRp-lH-6ru"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyU-xt-mXZ">
@@ -143,7 +140,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="myCalculate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wbX-co-x7m"/>
+                                            <action selector="myCalculate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gYP-FB-2NX"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -167,10 +164,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="Hy7-gT-xQt">
             <objects>
-                <viewController id="2ZX-Lc-mjQ" sceneMemberID="viewController">
+                <viewController id="2ZX-Lc-mjQ" customClass="secondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j9X-CR-1az"/>
                         <viewControllerLayoutGuide type="bottom" id="zvp-IT-qdf"/>
@@ -198,6 +195,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqd-MB-5lQ">
+                                <rect key="frame" x="20" y="162" width="275" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Twitter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openTwitterURL" destination="2ZX-Lc-mjQ" eventType="touchUpInside" id="ISa-cW-50n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.81176477670000002" blue="1" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -210,11 +220,8 @@
     </scenes>
     <resources>
         <image name="256x256.jpg" width="256" height="256"/>
-        <image name="256x256selected.gif" width="90" height="90"/>
         <image name="blackViper.jpg" width="204" height="204"/>
-        <image name="blackViperselected.gif" width="90" height="90"/>
         <image name="photo.jpg" width="250" height="250"/>
-        <image name="photoselected.jpg" width="90" height="90"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

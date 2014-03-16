@@ -23,7 +23,8 @@ typedef enum
 @property  NSString *chrylserType;
 @property int myCarType;
 
-
+@property int price;
+@property int tax;
 
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation chryslerCar
 
-@synthesize  chrylserType,myCarType,text;
+@synthesize  chrylserType,myCarType,text,tax,price,carPrice,myCalc;
 
 -(id)init
 {
@@ -25,22 +25,12 @@
 
 -(int)calculateMileTime
 {
-    if (myCarType == FourDoor) {
-        [self setMyCarType:0];
-        [self setChrylserType:@"ThreeHundred"];
-        return myCarType;
-    }else if (myCarType ==TwoDoor){
-        [self setMyCarType:1];
-        [self setChrylserType:@"Sebring"];
-        return myCarType;
-    }else if (myCarType == RaceType){
-        [self setMyCarType:2];
-        [self setChrylserType:@"Viper"];
-        return myCarType;
-    }else{
-        NSLog(@"Something went wrong");
-        return 99;
-    }
+    price = 12500;
+    tax = (price) *(.17);
+    self.carPrice = myCalc * (price / tax);
+    return carPrice;
+    NSLog(@"The cars PRICE calculation is %d ", carPrice);
+   
 }
 
 

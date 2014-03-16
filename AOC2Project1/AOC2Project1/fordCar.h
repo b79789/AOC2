@@ -20,5 +20,7 @@ typedef enum {
 @property carOrder2 *fordCarOrder;
 @property int distanceTraveled;
 @property int timePerQuarterMile;
+@property int price;
+@property int tax;
 
 @end
