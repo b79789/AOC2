@@ -37,5 +37,6 @@
 
 - (IBAction)removeKeyAction:(id)sender;
 
+-(IBAction)onClick;
 
 @end

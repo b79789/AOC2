@@ -43,7 +43,7 @@
 -(void)userCreatedNewEvent2:(NSString *)eventDescription2
 {
     //list the new events to with format of Event
-    listOfEvents.text = [listOfEvents.text stringByAppendingString:[NSString stringWithFormat:@"\nDate: %@", eventDescription2 ]];
+    listOfEvents.text = [listOfEvents.text stringByAppendingString:[NSString stringWithFormat:@"\nDate: %@\n", eventDescription2 ]];
 }
 
 @end
