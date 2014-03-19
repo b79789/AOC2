@@ -30,7 +30,7 @@
         UIViewController *tb2 = [[ViewController alloc] init];
         tb2 = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
         [self.navigationController pushViewController: tb2 animated:YES];
-        [self performSegueWithIdentifier: @"backToFirstSegue" sender: self];
+        [self performSegueWithIdentifier: @"backToFirst" sender: self];
         NSDate *today = [[NSDate alloc] init];
         NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
         [gregorian setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
@@ -59,12 +59,8 @@
 - (IBAction)removeKeyAction:(id)sender {
     
     NSLog(@"Keyboard remove Works!!");
-    [self->myTextField resignFirstResponder];
+    [self->_myTextField resignFirstResponder];
 }
-
-
-
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -72,6 +68,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([identifier isEqualToString:@"backToFirst"]) {
+        return YES;
+    }
+    return NO;
+}
+
+-(IBAction)done:(UIStoryboardSegue*)segue{
+    
+    //self.myTextView.text = self.myTextField.text ;
+}
 /*
 #pragma mark - Navigation
 

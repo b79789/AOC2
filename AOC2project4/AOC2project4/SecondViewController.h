@@ -15,12 +15,11 @@
 {
     
     __weak IBOutlet UILabel *swipeLabel2;
-    __weak IBOutlet UITextField *myTextField;
     __weak IBOutlet UIDatePicker *myDatePicker;
     __weak IBOutlet UIButton *closeKeyboardButton;
     UISwipeGestureRecognizer *leftSwipe;
 }
-
+@property (strong, nonatomic)UITextField *myTextField;
 - (IBAction)removeKeyAction:(id)sender;
 
 @end

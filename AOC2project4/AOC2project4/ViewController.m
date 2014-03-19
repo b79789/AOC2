@@ -17,10 +17,22 @@
 @synthesize myTextView;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"SecondViewController"]) {
+    if ([segue.identifier isEqualToString:@"fromFirstSegue"]) {
         SecondViewController *vc2 = (SecondViewController *)segue.destinationViewController;
-        //vc2.name = myTextView.text;
+        vc2.myTextField.text = myTextView.text;
+        NSLog(@"segue1 works");
+    }else
+    {
+        NSLog(@"help segue1 is broke");
     }
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([identifier isEqualToString:@"fromFirstSegue"]) {
+        return YES;
+    }
+    return NO;
 }
 
 -(void)onSwipe:(UISwipeGestureRecognizer*)recognizer
@@ -50,7 +62,10 @@
 }
 
 
-
+-(IBAction)done:(UIStoryboardSegue*)segue{
+    
+    //self.myTextView.text = self.myTextField.text ;
+}
 
 
 - (void)didReceiveMemoryWarning
