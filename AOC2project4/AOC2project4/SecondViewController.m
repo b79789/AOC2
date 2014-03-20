@@ -23,7 +23,6 @@
     return self;
 }
 
-
 -(void)onSwipe2:(UISwipeGestureRecognizer*)recognizer
 {
     if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
@@ -59,7 +58,7 @@
 - (IBAction)removeKeyAction:(id)sender {
     
     NSLog(@"Keyboard remove Works!!");
-    [self->_myTextField resignFirstResponder];
+    [self->myTextField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,18 +67,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([identifier isEqualToString:@"backToFirst"]) {
-        return YES;
+    if ([segue.identifier isEqualToString:@"backToFirst"]) {
+        //SecondViewController *vc2 = (SecondViewController *)segue.destinationViewController;
+        //vc2.myTextField.text = myTextView.text;
+        _myAddEventString = myTextField.text;
+        
+        NSLog(@"backToFirst segue works");
+    }else
+    {
+        NSLog(@"help segue1 is broke");
     }
-    return NO;
 }
 
--(IBAction)done:(UIStoryboardSegue*)segue{
-    
-    //self.myTextView.text = self.myTextField.text ;
-}
+
 /*
 #pragma mark - Navigation
 

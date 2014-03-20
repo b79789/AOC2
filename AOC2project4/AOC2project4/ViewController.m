@@ -15,17 +15,7 @@
 
 @implementation ViewController
 @synthesize myTextView;
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"fromFirstSegue"]) {
-        SecondViewController *vc2 = (SecondViewController *)segue.destinationViewController;
-        vc2.myTextField.text = myTextView.text;
-        NSLog(@"segue1 works");
-    }else
-    {
-        NSLog(@"help segue1 is broke");
-    }
-}
+
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
@@ -50,6 +40,7 @@
 
 - (void)viewDidLoad
 {
+    eventList = [[NSMutableString alloc]init];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     CALayer *btnLayer = [roundedSaveButton layer];
@@ -62,7 +53,12 @@
 }
 
 
--(IBAction)done:(UIStoryboardSegue*)segue{
+-(IBAction)done:(UIStoryboardSegue*)segue
+{
+    SecondViewController *vc2 = segue.sourceViewController;
+    [eventList appendString:vc2.myAddEventString];
+    [eventList appendString:@"\n\n"];
+    myTextView.text = eventList;
     
     //self.myTextView.text = self.myTextField.text ;
 }

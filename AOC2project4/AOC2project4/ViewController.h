@@ -13,7 +13,7 @@
 {
     
     __weak IBOutlet UILabel *swipeLabel1;
-    
+    NSMutableString *eventList;
     __weak IBOutlet UIButton *roundedSaveButton;
     UISwipeGestureRecognizer *rightSwipe;
     

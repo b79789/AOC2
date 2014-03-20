@@ -158,13 +158,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yM5-5f-e5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="a1x-xt-wSs" userLabel="Exit" sceneMemberID="exit"/>
                 <swipeGestureRecognizer direction="right" id="UQ3-Gj-Wcp">
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="backToFirst" modalTransitionStyle="crossDissolve" id="LUz-KK-Wjq"/>
+                        <segue destination="a1x-xt-wSs" kind="unwind" identifier="backToFirst" unwindAction="done:" id="WRz-Bi-JGt"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1172" y="-127"/>
+            <point key="canvasLocation" x="708" y="-16"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
