@@ -18,6 +18,7 @@
     UISwipeGestureRecognizer *rightSwipe;
     
 }
+-(IBAction)onClick:(id)sender;
 
 @property __weak IBOutlet UITextView *myTextView;
 @end

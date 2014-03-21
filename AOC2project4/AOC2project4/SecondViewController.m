@@ -23,24 +23,36 @@
     return self;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"backToFirst"]) {
+        //SecondViewController *vc2 = (SecondViewController *)segue.destinationViewController;
+        //vc2.myTextField.text = myTextView.text;
+        _myAddEventString = myTextField.text;
+        
+        NSLog(@"my addeventstring = %@",_myAddEventString);
+        
+    }else
+    {
+        NSLog(@"help segue1 is broke");
+    }
+}
 -(void)onSwipe2:(UISwipeGestureRecognizer*)recognizer
 {
-    if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
+    if (myTextField.text && myTextField.text.length == 0) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Error"
+                                                       message: @"Please put in an Event!"
+                                                      delegate: self
+                                             cancelButtonTitle:@"Cancel"
+                                             otherButtonTitles:@"OK",nil];
+        [alert show];
+    }else if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
         UIViewController *tb2 = [[ViewController alloc] init];
         tb2 = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
         [self.navigationController pushViewController: tb2 animated:YES];
         [self performSegueWithIdentifier: @"backToFirst" sender: self];
-        NSDate *today = [[NSDate alloc] init];
-        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-        [gregorian setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
-        NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-        [offsetComponents setMonth:0];
-        NSDate *minDate = [gregorian dateByAddingComponents:offsetComponents toDate:today options:0];
-        [myDatePicker setMinimumDate: minDate];
-        NSDate *date = myDatePicker.date;
-        NSLog(@"date=%@",[date description]);
-        NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        df.dateStyle = NSDateFormatterMediumStyle;
+        
+        //[self dismissViewControllerAnimated:YES completion:Nil];
     }else{
         NSLog(@"left swipe broke");
     }
@@ -67,20 +79,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+
+
+-(IBAction)onClick2
 {
-    if ([segue.identifier isEqualToString:@"backToFirst"]) {
-        //SecondViewController *vc2 = (SecondViewController *)segue.destinationViewController;
-        //vc2.myTextField.text = myTextView.text;
-        _myAddEventString = myTextField.text;
-        
-        NSLog(@"backToFirst segue works");
-    }else
+    if (myDatePicker != nil)
     {
-        NSLog(@"help segue1 is broke");
+        
+            NSDate *today = [[NSDate alloc] init];
+            NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+            [gregorian setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+            NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+            [offsetComponents setMonth:0];
+            NSDate *minDate = [gregorian dateByAddingComponents:offsetComponents toDate:today options:0];
+            [myDatePicker setMinimumDate: minDate];
+            NSDate *date = myDatePicker.date;
+            NSLog(@"date=%@",[date description]);
+            NSDateFormatter *df = [[NSDateFormatter alloc] init];
+            df.dateStyle = NSDateFormatterMediumStyle;
+            [df setDateFormat:@"MM/dd/yyyy hh:mm a"];
+            //df.timeZone = ns;
+            //df.dateStyle = NSDateFormatterLongStyle;
+            _myNewString = [NSString stringWithFormat:@"%@",[df stringFromDate:myDatePicker.date]];
+            NSLog(@"%@",_myNewString);
+        
+        
     }
 }
-
 
 /*
 #pragma mark - Navigation

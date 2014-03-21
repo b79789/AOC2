@@ -6,9 +6,6 @@
 //  Copyright (c) 2014 Brian Stacks. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "ViewController.h"
-
 
 
 @interface SecondViewController : UIViewController
@@ -20,8 +17,8 @@
     __weak IBOutlet UIButton *closeKeyboardButton;
     UISwipeGestureRecognizer *leftSwipe;
 }
-
-@property (strong, nonatomic)NSString *myAddEventString;
+@property NSString *myNewString;
+@property NSString *myAddEventString;
 - (IBAction)removeKeyAction:(id)sender;
 
 @end
