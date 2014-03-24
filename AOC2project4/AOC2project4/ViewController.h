@@ -17,8 +17,10 @@
     __weak IBOutlet UIButton *roundedSaveButton;
     UISwipeGestureRecognizer *rightSwipe;
     
+    __weak IBOutlet UIButton *clearButton;
 }
 -(IBAction)onClick:(id)sender;
+-(IBAction)clearData:(id)sender;
 
 @property __weak IBOutlet UITextView *myTextView;
 @end

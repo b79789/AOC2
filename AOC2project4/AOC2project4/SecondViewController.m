@@ -81,7 +81,7 @@
 
 
 
--(IBAction)onClick2
+-(void)onClick2: (id)sender
 {
     if (myDatePicker != nil)
     {
@@ -104,6 +104,13 @@
             NSLog(@"%@",_myNewString);
         
         
+    }else if (myDatePicker == nil){
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Error"
+                                                       message: @"Please put in an Date!"
+                                                      delegate: self
+                                             cancelButtonTitle:@"Cancel"
+                                             otherButtonTitles:@"OK",nil];
+        [alert show];
     }
 }
 

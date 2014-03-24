@@ -50,13 +50,10 @@
     rightSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(onSwipe:)];
     rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
     [swipeLabel1 addGestureRecognizer:rightSwipe];
-    [[NSUserDefaults standardUserDefaults] setObject:eventList forKey:@""];
+    NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
+    NSString *loadString = [defaults objectForKey:@"Event List:"];
+    [myTextView setText:loadString];
     
-    
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
     
 }
 
@@ -66,6 +63,7 @@
     [eventList appendString:vc2.myAddEventString];
     [eventList appendString:@"\n"];
     [eventList appendString:(vc2.myNewString == nil ? @"No date Selected!" : vc2.myNewString)];
+    //[eventList appendString:vc2.myNewString];
     [eventList appendString:@"\n\n"];
     myTextView.text = eventList;
     
@@ -78,26 +76,19 @@
     if (defaults != nil)
     {
         NSString *mySavedEventList =[NSString stringWithString:eventList];
-        myTextView.text = mySavedEventList;
+        mySavedEventList = myTextView.text;
+        [defaults setObject:eventList forKey:@"Event List:"];
+        [defaults synchronize];
         NSLog(@"%@",mySavedEventList);
-        
-        
-        
-        
-    }else
+   }else
     {
         NSLog(@"veiwDidAppear is not working");
     }
-    
-    /*
-    NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
-    if (defaults != nil)
-    {
-        
-        [defaults setObject:myTextView.text forKey:@"Event List:"];
-        [defaults synchronize];
-        NSLog(@"onClick worked");
-    }*/
+}
+
+-(IBAction)clearData:(id)sender
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"Event List:"];
 }
 
 - (void)didReceiveMemoryWarning
