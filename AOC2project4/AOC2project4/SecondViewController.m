@@ -22,6 +22,7 @@
     }
     return self;
 }
+// sending info and data between segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -37,6 +38,8 @@
         NSLog(@"help segue1 is broke");
     }
 }
+
+// this is my conditional that checks to see if textfield empty and throws an alert
 -(void)onSwipe2:(UISwipeGestureRecognizer*)recognizer
 {
     if (myTextField.text && myTextField.text.length == 0) {
@@ -67,44 +70,46 @@
     [swipeLabel2 addGestureRecognizer:leftSwipe];
 }
 
+//removes keyboard
+
 - (IBAction)removeKeyAction:(id)sender {
     
     NSLog(@"Keyboard remove Works!!");
     [self->myTextField resignFirstResponder];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
+// gets datepicker date and time and puts it in a string
 -(void)onClick2
 {
     if (myDatePicker != nil)
     {
         
-            NSDate *today = [[NSDate alloc] init];
-            NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-            [gregorian setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
-            NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-            [offsetComponents setMonth:0];
-            NSDate *minDate = [gregorian dateByAddingComponents:offsetComponents toDate:today options:0];
-            [myDatePicker setMinimumDate: minDate];
-            NSDate *date = myDatePicker.date;
-            NSLog(@"date=%@",[date description]);
-            NSDateFormatter *df = [[NSDateFormatter alloc] init];
-            df.dateStyle = NSDateFormatterMediumStyle;
-            [df setDateFormat:@"MM/dd/yyyy hh:mm a"];
-            //df.timeZone = ns;
-            //df.dateStyle = NSDateFormatterLongStyle;
-            _myNewString = [NSString stringWithFormat:@"%@",[df stringFromDate:myDatePicker.date]];
-            NSLog(@"%@",_myNewString);
+        NSDate *today = [[NSDate alloc] init];
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        [gregorian setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EST"]];
+        NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+        [offsetComponents setMonth:0];
+        NSDate *minDate = [gregorian dateByAddingComponents:offsetComponents toDate:today options:0];
+        [myDatePicker setMinimumDate: minDate];
+        NSDate *date = myDatePicker.date;
+        NSLog(@"date=%@",[date description]);
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        df.dateStyle = NSDateFormatterMediumStyle;
+        [df setDateFormat:@"MM/dd/yyyy hh:mm a"];
+        //df.timeZone = ns;
+        //df.dateStyle = NSDateFormatterLongStyle;
+        _myNewString = [NSString stringWithFormat:@"%@",[df stringFromDate:myDatePicker.date]];
+        NSLog(@"%@",_myNewString);
         
         
     }
+}
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*

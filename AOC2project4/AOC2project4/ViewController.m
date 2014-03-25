@@ -19,15 +19,20 @@
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
-    if ([identifier isEqualToString:@"fromFirstSegue"]) {
+        if ([identifier isEqualToString:@"fromFirstSegue"]) {
+        
         return YES;
     }
     return NO;
 }
 
+// Right swipe to segue to the next view
 -(void)onSwipe:(UISwipeGestureRecognizer*)recognizer
 {
     if (recognizer.direction == UISwipeGestureRecognizerDirectionRight) {
+        
+        // named viewController tb and instantiate it and perform the segue named fromFirst Sehgue
+        
         UIViewController *tb = [[SecondViewController alloc] init];
         tb = [self.storyboard instantiateViewControllerWithIdentifier:@"SecondViewController"];
         [self.navigationController pushViewController:tb animated:YES];
@@ -40,35 +45,44 @@
 
 - (void)viewDidLoad
 {
+    
+    //on viewDidLoad initiate the eventList as a mutable string
     eventList = [[NSMutableString alloc]init];
     
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    /*CALayer *btnLayer = [roundedSaveButton layer];
-    [btnLayer setMasksToBounds:YES];
-    [btnLayer setCornerRadius:5.0f];*/
+	//Added the right swipe to the view and to the label with the right swipe taking
     rightSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(onSwipe:)];
     rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
     [swipeLabel1 addGestureRecognizer:rightSwipe];
     NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
     NSString *loadString = [defaults objectForKey:@"Event List:"];
-    [myTextView setText:loadString];
-    
+    [eventList appendString:loadString];
+    myTextView.text = eventList;
     
 }
 
+
+// this is action done when swipping back and saving data
+
 -(IBAction)done:(UIStoryboardSegue*)segue
 {
+    NSDateFormatter *DateFormatter=[[NSDateFormatter alloc] init];
+    [DateFormatter setDateFormat:@"MM/dd/yyyy hh:mm a"];
+    //NSUserDefaults *defaults= [NSUserDefaults standardUserDefaults];
+    //NSString *loadString = [defaults objectForKey:@"Event List:"];
+    NSLog(@"todays date is %@",[DateFormatter stringFromDate:[NSDate date]]);
     SecondViewController *vc2 = segue.sourceViewController;
     [eventList appendString:vc2.myAddEventString];
     [eventList appendString:@"\n"];
-    [eventList appendString:(vc2.myNewString == nil ? @"No date Selected!" : vc2.myNewString)];
-    //[eventList appendString:vc2.myNewString];
+    [eventList appendString:(vc2.myNewString == nil ? [DateFormatter stringFromDate:[NSDate date]] : vc2.myNewString)];
     [eventList appendString:@"\n\n"];
+    //NSString *myListString = [NSString stringWithString:eventList];
     myTextView.text = eventList;
     
     //self.myTextView.text = self.myTextField.text ;
 }
+
+// saving user defaults /settings
 
 -(IBAction)onClick:(id)sender
 {
@@ -76,19 +90,22 @@
     if (defaults != nil)
     {
         NSString *mySavedEventList =[NSString stringWithString:eventList];
-        mySavedEventList = myTextView.text;
-        [defaults setObject:eventList forKey:@"Event List:"];
+        //mySavedEventList = myTextView.text;
+        [defaults setObject:mySavedEventList forKey:@"Event List:"];
         [defaults synchronize];
         NSLog(@"%@",mySavedEventList);
    }else
     {
-        NSLog(@"veiwDidAppear is not working");
+        NSLog(@"Save Button is not working");
     }
 }
 
+// clear save data and clear textview
+
 -(IBAction)clearData:(id)sender
 {
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"Event List:"];
+    [eventList setString:@""];
+    myTextView.text =@"";
 }
 
 - (void)didReceiveMemoryWarning
